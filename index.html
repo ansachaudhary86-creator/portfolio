@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Ansa Mehmood | AI Student Portfolio</title>
+<meta name="description" content="Ansa Mehmood, final-year BS Artificial Intelligence student learning machine learning, deep learning, NLP and computer vision through projects.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3ea;--bg2:#e1eadc;--card:#fbfdf9;--text:#1f2d25;--muted:#5d6f63;--accent:#4f7a5c;--accent-d:#37594a;--accent-l:#cfe0cd;--gold:#b9a46a;--border:#d3e0cf;--shadow:0 10px 30px rgba(55,89,74,.10);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+h1,h2,h3,.logo{font-family:'Playfair Display',Georgia,serif}
+a{color:inherit;text-decoration:none}
+.container{max-width:1120px;margin:auto;padding:0 22px;position:relative;z-index:2}
+section{padding:100px 0;position:relative}
+.alt{background:rgba(225,234,220,.75)}
+#bg{position:fixed;inset:0;z-index:0;pointer-events:none}
+#glow{position:fixed;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(79,122,92,.16),transparent 70%);pointer-events:none;z-index:1;transform:translate(-50%,-50%)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--accent),var(--gold));z-index:100}
+.grad{background:linear-gradient(90deg,var(--accent-d),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{color:var(--accent);font-weight:600;letter-spacing:.18em;font-size:.76rem;text-transform:uppercase;margin-bottom:8px}
+h2{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;color:var(--accent-d);margin-bottom:10px}
+.line{width:56px;height:3px;background:var(--accent);border-radius:3px;margin-bottom:20px}
+.sub{color:var(--muted);max-width:620px;margin-bottom:42px}
+nav{position:fixed;top:0;width:100%;z-index:90;background:rgba(238,243,234,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding-top:env(safe-area-inset-top,0px)}
+nav .container{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:700;font-size:1.3rem;color:var(--accent-d)}
+.links{display:flex;gap:4px;align-items:center}
+.links a{color:var(--muted);font-weight:500;font-size:.9rem;padding:8px 14px;border-radius:10px;transition:.2s}
+.links a:hover{color:var(--accent-d);background:var(--accent-l)}
+.burger{display:none;background:var(--card);border:1px solid var(--border);color:var(--text);width:40px;height:40px;border-radius:10px;font-size:1.1rem;cursor:pointer}
+#home{min-height:100vh;display:flex;align-items:center;padding-top:90px}
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:50px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:9px;padding:7px 16px;border:1px solid var(--border);background:var(--card);border-radius:40px;font-size:.82rem;font-weight:500;color:var(--accent-d);margin-bottom:22px;box-shadow:var(--shadow)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(79,122,92,.6)}70%{box-shadow:0 0 0 9px rgba(79,122,92,0)}100%{box-shadow:0 0 0 0 rgba(79,122,92,0)}}
+h1{font-size:clamp(2.8rem,7vw,5rem);line-height:1.05;color:var(--accent-d)}
+.role{font-size:1.4rem;color:var(--muted);margin:14px 0;min-height:2.2rem}
+.role span{color:var(--text);font-weight:600;border-right:3px solid var(--accent);padding-right:5px}
+.bio{color:var(--muted);max-width:540px;margin-bottom:30px;font-size:1.05rem}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:12px;font-weight:600;border:1.5px solid var(--accent);cursor:pointer;transition:.25s;font-size:.94rem;margin:0 10px 10px 0;color:var(--accent-d);background:transparent;font-family:inherit}
+.btn.primary{background:var(--accent);color:#fff;box-shadow:var(--shadow)}
+.btn.primary:hover{background:var(--accent-d)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(55,89,74,.2)}
+.socials{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.socials a{padding:8px 16px;border:1px solid var(--border);background:var(--card);border-radius:10px;color:var(--muted);font-size:.88rem;transition:.2s}
+.socials a:hover{color:var(--accent-d);border-color:var(--accent);transform:translateY(-2px)}
+.avatar-wrap{position:relative;width:310px;height:310px;margin:auto}
+.avatar-wrap::before{content:"";position:absolute;inset:-16px;border-radius:50%;background:conic-gradient(from 0deg,var(--accent),var(--accent-l),var(--gold),var(--accent));animation:spin 10s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.avatar{position:absolute;inset:0;border-radius:50%;background:var(--accent-l) center/cover;border:7px solid var(--bg);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:6.5rem;font-weight:700;color:var(--accent-d)}
+.float{position:absolute;padding:9px 15px;border-radius:14px;background:var(--card);border:1px solid var(--border);font-size:.8rem;font-weight:600;color:var(--accent-d);box-shadow:var(--shadow);animation:bob 5s ease-in-out infinite}
+.f1{top:6%;right:-16%}.f2{bottom:12%;left:-18%;animation-delay:1.2s}.f3{bottom:-4%;right:-6%;animation-delay:2.2s}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;margin-top:70px}
+.stat{padding:24px;background:var(--card);border:1px solid var(--border);border-radius:18px;text-align:center;box-shadow:var(--shadow)}
+.stat b{font-family:'Playfair Display',serif;font-size:2.4rem;color:var(--accent-d);display:block}
+.stat span{color:var(--muted);font-size:.86rem}
+.marquee{overflow:hidden;border-block:1px solid var(--border);padding:18px 0;background:var(--accent-d);position:relative;z-index:2}
+.track{display:flex;gap:46px;width:max-content;animation:scroll 32s linear infinite;font-family:'Playfair Display',serif;font-size:1.15rem;color:#e7f0e3;font-weight:600}
+.track i{color:var(--gold);font-style:normal}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px;transition:.3s;box-shadow:var(--shadow)}
+.card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 18px 40px rgba(55,89,74,.16)}
+.card h3{margin-bottom:8px;font-size:1.2rem;color:var(--accent-d)}
+.card p,.muted{color:var(--muted);font-size:.95rem}
+.tag{display:inline-block;font-size:.78rem;padding:4px 13px;border-radius:20px;background:var(--accent-l);color:var(--accent-d);margin:8px 6px 0 0;font-weight:500}
+.edu-item{padding-bottom:16px;margin-bottom:16px;border-bottom:1px dashed var(--border)}
+.edu-item:last-child{border:0;margin:0;padding:0}
+.featured{grid-column:1/-1;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center;background:linear-gradient(135deg,#f4f9f1,#dfeadb);border-color:var(--accent)}
+.ribbon{display:inline-block;background:var(--accent-d);color:#fff;font-size:.7rem;font-weight:700;padding:5px 13px;border-radius:20px;letter-spacing:.08em;margin-bottom:14px}
+.pulse-box{height:190px;border-radius:16px;border:1px solid var(--border);background:var(--card);display:flex;align-items:center;justify-content:center;font-size:4.5rem}
+.timeline{border-left:2px solid var(--accent-l);padding-left:30px;max-width:760px}
+.item{position:relative;margin-bottom:26px;padding:20px 24px;background:var(--card);border:1px solid var(--border);border-radius:16px;transition:.3s;box-shadow:var(--shadow)}
+.item:hover{border-color:var(--accent);transform:translateX(6px)}
+.item::before{content:"";position:absolute;left:-39px;top:26px;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px var(--bg)}
+.item small{color:var(--accent);font-weight:600;letter-spacing:.08em}
+.item h3{color:var(--accent-d)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.filters button{padding:9px 20px;border-radius:30px;border:1px solid var(--border);background:var(--card);color:var(--muted);cursor:pointer;font-weight:500;transition:.2s;font-family:inherit}
+.filters button.active,.filters button:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.proj{cursor:pointer}
+.more{color:var(--accent);font-weight:600;font-size:.85rem;margin-top:14px;display:inline-block}
+#modal{position:fixed;inset:0;background:rgba(31,45,37,.5);backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;z-index:120;padding:20px}
+#modal.open{display:flex}
+.mbox{background:var(--card);border:1px solid var(--border);border-radius:22px;max-width:520px;width:100%;padding:32px;position:relative;box-shadow:0 30px 60px rgba(0,0,0,.2);animation:pop .3s}
+@keyframes pop{from{transform:scale(.92);opacity:0}}
+.mbox h3{font-size:1.5rem;color:var(--accent-d);margin-bottom:10px}
+.close{position:absolute;right:16px;top:12px;background:none;border:none;color:var(--muted);font-size:1.7rem;cursor:pointer}
+.contact{display:grid;grid-template-columns:1fr 1.1fr;gap:34px}
+.cinfo a,.cinfo div.ci{display:flex;gap:14px;align-items:center;padding:16px 18px;margin-bottom:14px;border:1px solid var(--border);background:var(--card);border-radius:16px;transition:.2s}
+.cinfo a:hover{border-color:var(--accent)}
+.cinfo em{font-style:normal;font-size:1.3rem}
+form{display:grid;gap:14px}
+input,textarea{width:100%;padding:15px;border-radius:14px;border:1px solid var(--border);background:var(--card);color:var(--text);font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--accent)}
+footer{text-align:center;padding:32px;color:var(--muted);border-top:1px solid var(--border);background:var(--bg2);position:relative;z-index:2}
+.reveal{opacity:0;transform:translateY(34px);transition:.85s cubic-bezier(.2,.7,.2,1)}
+.reveal.show{opacity:1;transform:none}
+#chatBtn{position:fixed;right:22px;bottom:22px;width:60px;height:60px;border-radius:50%;border:none;background:var(--accent);color:#fff;font-size:1.5rem;cursor:pointer;z-index:95;box-shadow:0 12px 30px rgba(55,89,74,.45)}
+#chat{position:fixed;right:22px;bottom:94px;width:340px;max-width:calc(100vw - 30px);background:var(--card);border:1px solid var(--border);border-radius:20px;display:none;flex-direction:column;overflow:hidden;z-index:95;box-shadow:0 24px 55px rgba(31,45,37,.28)}
+#chat.open{display:flex}
+.chead{padding:15px 18px;background:var(--accent);color:#fff;font-weight:600}
+#msgs{height:265px;overflow:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--bg)}
+.m{padding:9px 14px;border-radius:14px;max-width:86%;font-size:.88rem}
+.m.bot{background:var(--card);border:1px solid var(--border);align-self:flex-start}
+.m.me{background:var(--accent);color:#fff;align-self:flex-end}
+.chips{display:flex;gap:6px;flex-wrap:wrap;padding:8px 14px;background:var(--bg)}
+.chips button{font-size:.74rem;padding:5px 11px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--accent-d);cursor:pointer}
+.cin{display:flex;border-top:1px solid var(--border)}
+.cin input{border:none;border-radius:0;background:var(--card)}
+.cin button{border:none;background:var(--accent);color:#fff;padding:0 18px;cursor:pointer}
+@media(max-width:860px){
+.hero,.contact,.featured{grid-template-columns:1fr}.hero{text-align:center}
+.avatar-wrap{order:-1;width:230px;height:230px}.avatar{font-size:4.5rem}
+.f1{right:-4%}.f2{left:-4%}.bio{margin-inline:auto}.socials{justify-content:center}
+.links{position:absolute;top:calc(68px + env(safe-area-inset-top,0px));left:0;right:0;flex-direction:column;background:var(--bg);padding:16px;display:none;border-bottom:1px solid var(--border)}
+.links.open{display:flex}.burger{display:block}#glow{display:none}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas><div id="glow"></div><div id="progress"></div>
+<nav><div class="container">
+<a href="#home" class="logo" id="logo"></a>
+<div class="links" id="links"><a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#certs">Certificates</a><a href="#contact">Contact</a></div>
+<button class="burger" id="burger" aria-label="Menu">☰</button>
+</div></nav>
+
+<section id="home"><div class="container">
+<div class="hero">
+<div>
+<div class="badge"><span class="dot"></span><span id="badge"></span></div>
+<h1>Hi, I’m <span class="grad" id="name"></span></h1>
+<p class="role">Learning and exploring <span id="typed"></span></p>
+<p class="bio" id="tagline"></p>
+<a href="cv.pdf" download class="btn primary">⬇ Download CV</a>
+<a href="#projects" class="btn">View Projects →</a>
+<a href="#contact" class="btn">Hire Me</a>
+<div class="socials" id="socials"></div>
+</div>
+<div class="avatar-wrap"><div class="avatar" id="avatar"></div>
+<div class="float f1">🧠 Deep Learning</div><div class="float f2">👁️ Computer Vision</div><div class="float f3">💬 NLP</div></div>
+</div>
+<div class="stats" id="stats"></div>
+</div></section>
+
+<div class="marquee"><div class="track" id="track"></div></div>
+
+<section id="about"><div class="container reveal">
+<p class="eyebrow">About me</p>
+<h2>Learning AI by <span class="grad">building projects</span></h2><div class="line"></div>
+<p class="sub" id="about-text"></p>
+<div class="grid">
+<div class="card"><h3>🎓 Education</h3><div id="edu"></div></div>
+<div class="card"><h3>🌐 Languages</h3><div id="langs"></div><h3 style="margin-top:22px">🤝 Social Work</h3><p id="social"></p></div>
+</div>
+</div></section>
+
+<section id="skills" class="alt"><div class="container reveal">
+<p class="eyebrow">Skills</p><h2>My <span class="grad">toolkit</span></h2><div class="line"></div>
+<p class="sub">Tools and technologies I have learned and practiced so far.</p>
+<div class="grid" id="skillGrid"></div>
+</div></section>
+
+<section id="projects"><div class="container reveal">
+<p class="eyebrow">Projects</p><h2>Featured <span class="grad">work</span></h2><div class="line"></div>
+<p class="sub">Click any project to see the details.</p>
+<div class="filters" id="filters"></div>
+<div class="grid" id="projects-grid"></div>
+</div></section>
+
+<section id="certs" class="alt"><div class="container reveal">
+<p class="eyebrow">Certificates</p><h2>Training &amp; <span class="grad">certifications</span></h2><div class="line"></div>
+<p class="sub">Continuous learning beyond the classroom.</p>
+<div class="timeline" id="timeline"></div>
+</div></section>
+
+<section id="contact"><div class="container reveal">
+<p class="eyebrow">Contact</p><h2>Let’s <span class="grad">work together</span></h2><div class="line"></div>
+<p class="sub">Open to internships, entry-level AI/ML roles and freelance projects.</p>
+<div class="contact">
+<div class="cinfo" id="cinfo"></div>
+<form id="form">
+<input id="fn" placeholder="Your name" required>
+<input id="fe" type="email" placeholder="Your email" required>
+<textarea id="fm" rows="5" placeholder="Your message" required></textarea>
+<button class="btn primary" type="submit" style="justify-content:center;margin:0">Send Message ✉</button>
+</form>
+</div>
+</div></section>
+
+<footer id="footer"></footer>
+
+<div id="modal"><div class="mbox"><button class="close" id="mclose">×</button><div id="mbody"></div></div></div>
+
+<button id="chatBtn" aria-label="Open AI assistant">🤖</button>
+<div id="chat">
+<div class="chead">✨ AI Assistant · Ask about Ansa</div>
+<div id="msgs"></div><div class="chips" id="chips"></div>
+<div class="cin"><input id="cinput" placeholder="Type a question..."><button id="csend">Send</button></div>
+</div>
+
+<script>
+const DATA = {
+  name: "Ansa Mehmood",
+  badge: "Final-Year AI Student · Open to Opportunities",
+  roles: ["Machine Learning", "Deep Learning", "NLP", "Computer Vision", "Data Analysis"],
+  tagline: "Final-year AI student learning machine learning and data science by building projects, and always looking to learn more.",
+  about: "I am a final-year BS Artificial Intelligence student. I enjoy learning machine learning and data science by building projects. Alongside AI, I have practical skills in web development and graphic design with Canva.",
+  email: "ansachaudhary86@gmail.com",
+  phone: "+92 328 8798984",
+  address: "Faisal Colony, Bahawalpur",
+  photo: "me.jpg",
+  stats: [[5, "", "Projects"], [3, "", "Certifications"], [2, "", "Languages"]],
+  marquee: ["Python","Machine Learning","Deep Learning","NLP","Computer Vision","Data Analysis","Pandas","NumPy","Full Stack Development","Canva","MS Office"],
+  education: [
+    { title: "BS Artificial Intelligence", place: "Government Sadiq Women University, Bahawalpur", year: "2023 – Present" },
+    { title: "Intermediate", place: "Cambridge Higher Secondary School, Uch Sharif", year: "2020 – 2022" }
+  ],
+  languages: ["English", "Urdu"],
+  social: "Volunteer at VLG (Volunteer Leading Governance).",
+  skillGroups: [
+    { icon: "🤖", title: "AI & Data Science", items: ["Python", "Machine Learning", "Deep Learning", "NLP", "Computer Vision", "Data Analysis", "Pandas", "NumPy"] },
+    { icon: "💻", title: "Development", items: ["Full Stack Development", "HTML / CSS / JavaScript"] },
+    { icon: "🎨", title: "Design & Office", items: ["Canva Designs", "MS Office (Excel, Word, PowerPoint)"] }
+  ],
+  certs: [
+    { date: "CERTIFICATE", title: "Soft Tech Global Software House, Bahawalpur", text: "ML, DL, NLP, Computer Vision and Data Analysis." },
+    { date: "CERTIFICATE", title: "BLIZON", text: "Full Stack Developer." },
+    { date: "TRAINING", title: "AI for Everyone, NAVTTC", text: "Hands-on training in AI tools and applications." }
+  ],
+  categories: ["All", "AI/ML", "Web", "Design"],
+  projects: [
+    { title: "Sign Language Recognition", cat: "AI/ML", featured: true, tag: "FINAL YEAR PROJECT",
+      text: "Final year project on recognizing sign language, built with a team of three.",
+      detail: "My Final Year Project, developed with a team of three. It focuses on recognizing sign language using computer vision and deep learning.",
+      tags: ["Computer Vision", "Deep Learning", "Python"], link: "#" },
+    { title: "Rose Flower Classifier", cat: "AI/ML", text: "Rose flower image classifier using CNN, ANN and a hybrid model, with a simple dashboard.",
+      detail: "A learning project to classify rose flowers using CNN, ANN and a hybrid of both, with a dashboard that rejects images that are not roses.", tags: ["CNN", "ANN", "Colab"], link: "#" },
+    { title: "Intrusion Detection System", cat: "AI/ML", text: "Intrusion detection on the NSL-KDD dataset, comparing XGBoost, Deep Forest and MLP.",
+      detail: "A learning project on the NSL-KDD dataset where I tried CTGAN and VAE for balancing the data and compared XGBoost, Deep Forest and MLP models.", tags: ["XGBoost", "Deep Forest", "MLP"], link: "#" },
+    { title: "Student Management System", cat: "Web", text: "A simple dashboard to view and analyze student data.",
+      detail: "A student management dashboard with basic dataset analysis and a clean, light interface.", tags: ["Python", "Dashboard"], link: "#" },
+    { title: "Canva Templates & Branding", cat: "Design", text: "Canva templates and branding for small businesses.",
+      detail: "Canva templates and Instagram branding that I designed for small businesses.", tags: ["Canva", "Branding"], link: "#" }
+  ],
+  socials: [["LinkedIn", "https://linkedin.com/in/your-id"], ["GitHub", "https://github.com/your-id"], ["Instagram", "https://instagram.com/your-id"]]
+};
+
+const $ = s => document.querySelector(s);
+document.title = DATA.name + " | AI Student Portfolio";
+$("#logo").innerHTML = DATA.name.split(" ")[0] + '<span class="grad">.ai</span>';
+$("#name").textContent = DATA.name;
+$("#badge").textContent = DATA.badge;
+$("#tagline").textContent = DATA.tagline;
+$("#about-text").textContent = DATA.about;
+$("#social").textContent = DATA.social;
+$("#footer").textContent = "© " + new Date().getFullYear() + " " + DATA.name + " · Crafted with passion and AI";
+
+const av = $("#avatar"); av.textContent = DATA.name[0];
+if (DATA.photo) { const t = new Image(); t.onload = () => { av.style.backgroundImage = `url(${DATA.photo})`; av.textContent = ""; }; t.src = DATA.photo; }
+
+$("#socials").innerHTML = DATA.socials.map(s => `<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join("");
+$("#stats").innerHTML = DATA.stats.map(s => `<div class="stat"><b><span class="count" data-to="${s[0]}">0</span>${s[1]}</b><span>${s[2]}</span></div>`).join("");
+$("#track").innerHTML = [...DATA.marquee, ...DATA.marquee].map(m => `<span>${m}</span><i>✦</i>`).join("");
+$("#edu").innerHTML = DATA.education.map(e => `<div class="edu-item"><b>${e.title}</b><br><span class="muted">${e.place}<br>${e.year}</span></div>`).join("");
+$("#langs").innerHTML = DATA.languages.map(l => `<span class="tag">${l}</span>`).join("");
+$("#skillGrid").innerHTML = DATA.skillGroups.map(g => `<div class="card"><h3>${g.icon} ${g.title}</h3>${g.items.map(i => `<span class="tag">${i}</span>`).join("")}</div>`).join("");
+$("#timeline").innerHTML = DATA.certs.map(e => `<div class="item"><small>${e.date}</small><h3>${e.title}</h3><p class="muted">${e.text}</p></div>`).join("");
+$("#cinfo").innerHTML = `
+<a href="mailto:${DATA.email}"><em>✉️</em><div><b>Email</b><br><span class="muted">${DATA.email}</span></div></a>
+<a href="tel:${DATA.phone.replace(/\s/g, "")}"><em>📞</em><div><b>Phone</b><br><span class="muted">${DATA.phone}</span></div></a>
+<div class="ci"><em>📍</em><div><b>Location</b><br><span class="muted">${DATA.address}</span></div></div>`;
+
+function renderProjects(cat = "All") {
+  const list = DATA.projects.filter(p => cat === "All" || p.cat === cat);
+  $("#projects-grid").innerHTML = list.map(p => {
+    const i = DATA.projects.indexOf(p);
+    if (p.featured && cat === "All") return `<div class="card proj featured" data-i="${i}"><div><span class="ribbon">★ ${p.tag}</span><h3 style="font-size:1.7rem">${p.title}</h3><p>${p.text}</p>${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}<br><span class="more">View details →</span></div><div class="pulse-box">🤟</div></div>`;
+    return `<div class="card proj" data-i="${i}"><h3>${p.title}</h3><p>${p.text}</p>${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}<br><span class="more">View details →</span></div>`;
+  }).join("");
+}
+$("#filters").innerHTML = DATA.categories.map((c, i) => `<button class="${i ? "" : "active"}">${c}</button>`).join("");
+$("#filters").addEventListener("click", e => {
+  if (e.target.tagName !== "BUTTON") return;
+  document.querySelectorAll("#filters button").forEach(b => b.classList.remove("active"));
+  e.target.classList.add("active"); renderProjects(e.target.textContent);
+});
+$("#projects-grid").addEventListener("click", e => {
+  const c = e.target.closest(".proj"); if (!c) return;
+  const p = DATA.projects[c.dataset.i];
+  $("#mbody").innerHTML = `<h3>${p.title}</h3><p class="muted">${p.detail}</p><div style="margin:14px 0">${p.tags.map(t => `<span class="tag">${t}</span>`).join("")}</div>${p.link && p.link !== "#" ? `<a class="btn primary" href="${p.link}" target="_blank" rel="noopener">Open project ↗</a>` : ""}`;
+  $("#modal").classList.add("open");
+});
+$("#mclose").onclick = () => $("#modal").classList.remove("open");
+$("#modal").onclick = e => { if (e.target.id === "modal") $("#modal").classList.remove("open"); };
+renderProjects();
+
+let ri = 0, ci = 0, del = false;
+(function type() {
+  const w = DATA.roles[ri];
+  $("#typed").textContent = w.slice(0, ci);
+  if (!del && ci++ === w.length) { del = true; return setTimeout(type, 1400); }
+  if (del && --ci === 0) { del = false; ri = (ri + 1) % DATA.roles.length; }
+  setTimeout(type, del ? 40 : 85);
+})();
+
+function countUp(el) {
+  const to = parseFloat(el.dataset.to), dec = to % 1 ? 2 : 0; let n = 0;
+  const step = () => { n += to / 50; if (n >= to) { el.textContent = to.toFixed(dec); return; } el.textContent = n.toFixed(dec); requestAnimationFrame(step); };
+  step();
+}
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); }), { threshold: .12 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+const io2 = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { countUp(e.target); io2.unobserve(e.target); } }), { threshold: .5 });
+document.querySelectorAll(".count").forEach(el => io2.observe(el));
+
+addEventListener("scroll", () => { $("#progress").style.width = (scrollY / Math.max(1, document.body.scrollHeight - innerHeight) * 100) + "%"; });
+addEventListener("mousemove", e => { const g = $("#glow"); g.style.left = e.clientX + "px"; g.style.top = e.clientY + "px"; });
+
+const cv = $("#bg"), cx = cv.getContext("2d"); let W, H, P = [];
+function size() { W = cv.width = innerWidth; H = cv.height = innerHeight; P = Array.from({ length: Math.min(65, Math.floor(W / 22)) }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35 })); }
+size(); addEventListener("resize", size);
+(function draw() {
+  cx.clearRect(0, 0, W, H);
+  P.forEach((p, i) => {
+    p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1;
+    cx.fillStyle = "rgba(79,122,92,.55)"; cx.beginPath(); cx.arc(p.x, p.y, 1.8, 0, 7); cx.fill();
+    for (let j = i + 1; j < P.length; j++) { const q = P[j], d = Math.hypot(p.x - q.x, p.y - q.y); if (d < 130) { cx.strokeStyle = `rgba(79,122,92,${.2 * (1 - d / 130)})`; cx.beginPath(); cx.moveTo(p.x, p.y); cx.lineTo(q.x, q.y); cx.stroke(); } }
+  });
+  requestAnimationFrame(draw);
+})();
+
+$("#burger").onclick = () => $("#links").classList.toggle("open");
+$("#links").onclick = e => { if (e.target.tagName === "A") $("#links").classList.remove("open"); };
+
+$("#form").addEventListener("submit", e => {
+  e.preventDefault();
+  const body = `Name: ${$("#fn").value}%0D%0AEmail: ${$("#fe").value}%0D%0A%0D%0A${encodeURIComponent($("#fm").value)}`;
+  location.href = `mailto:${DATA.email}?subject=Portfolio message from ${encodeURIComponent($("#fn").value)}&body=${body}`;
+});
+
+const kb = [
+  [/skill|tech|tool|know|python/, () => "Skills: " + DATA.skillGroups.map(g => g.items.join(", ")).join(". ") + "."],
+  [/fyp|final year|sign/, () => DATA.projects[0].detail],
+  [/project|built|work on/, () => "Projects: " + DATA.projects.map(p => p.title).join(", ") + "."],
+  [/educat|study|universit|degree|college/, () => DATA.education.map(e => `${e.title}, ${e.place} (${e.year})`).join("; ") + "."],
+  [/certif|course|training|blizon|soft tech/, () => DATA.certs.map(c => `${c.title}: ${c.text}`).join(" ")],
+  [/contact|email|reach|hire|connect|phone|address|live|where/, () => `Email: ${DATA.email} · Phone: ${DATA.phone} · ${DATA.address}.`],
+  [/cv|resume/, () => "Use the Download CV button at the top of the page."],
+  [/volunteer|social/, () => DATA.social],
+  [/who|about|yourself|name/, () => `I’m ${DATA.name}. ${DATA.about}`],
+  [/hi|hello|hey|salam/, () => `Hello! I’m ${DATA.name}’s assistant. Ask about skills, projects, education, certificates or contact.`]
+];
+const msgs = $("#msgs");
+const say = (t, who) => { const d = document.createElement("div"); d.className = "m " + who; d.textContent = t; msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight; };
+function ask(q) { if (!q.trim()) return; say(q, "me"); const hit = kb.find(k => k[0].test(q.toLowerCase())); setTimeout(() => say(hit ? hit[1]() : "I can answer about skills, projects, education, certificates or how to contact Ansa.", "bot"), 450); }
+say(`Hi! I’m ${DATA.name}’s AI assistant. What would you like to know?`, "bot");
+$("#chips").innerHTML = ["Skills", "Projects", "Education", "Certificates", "Contact"].map(c => `<button>${c}</button>`).join("");
+$("#chips").onclick = e => { if (e.target.tagName === "BUTTON") ask(e.target.textContent); };
+$("#csend").onclick = () => { ask($("#cinput").value); $("#cinput").value = ""; };
+$("#cinput").addEventListener("keydown", e => { if (e.key === "Enter") $("#csend").click(); });
+$("#chatBtn").onclick = () => $("#chat").classList.toggle("open");
+</script>
+</body>
+</html>
